@@ -19,7 +19,14 @@ public class PlayerMove : MonoBehaviour
             bool isCollide = Physics.Raycast(ray, out RaycastHit hit);
             if (isCollide)
             {
-                navMeshAgent.SetDestination(hit.point);
+                if (hit.collider.gameObject.tag == "Gound")
+                {
+                    navMeshAgent.SetDestination(hit.point);
+                }
+                else if (hit.collider.gameObject.tag == "Interactable")
+                {
+                    hit.collider.GetComponent<InteractableObject>().OnClick(navMeshAgent); //A parent class. Do interactable object fund.
+                }
             }
         }
     }
