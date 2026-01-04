@@ -1,0 +1,90 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETStandard,Version=v2.1": {
+      "Polyperfect.Universal/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/Polyperfect.Universal.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Polyperfect.Universal.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Polyperfect.Universal/1.0.0": {
+      "type": "project",
+      "path": "Polyperfect.Universal.csproj",
+      "msbuildProject": "Polyperfect.Universal.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETStandard,Version=v2.1": [
+      "Polyperfect.Universal >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "/Users/binbx/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/binbx/Unity_Learning_Journey/SimpleRPG_LearningFromSuKi/Assembly-CSharp.csproj",
+      "projectName": "Assembly-CSharp",
+      "projectPath": "/Users/binbx/Unity_Learning_Journey/SimpleRPG_LearningFromSuKi/Assembly-CSharp.csproj",
+      "packagesPath": "/Users/binbx/.nuget/packages/",
+      "outputPath": "/Users/binbx/Unity_Learning_Journey/SimpleRPG_LearningFromSuKi/Temp/obj/Assembly-CSharp/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/binbx/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "netstandard2.1"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "projectReferences": {
+            "/Users/binbx/Unity_Learning_Journey/SimpleRPG_LearningFromSuKi/Polyperfect.Universal.csproj": {
+              "projectPath": "/Users/binbx/Unity_Learning_Journey/SimpleRPG_LearningFromSuKi/Polyperfect.Universal.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.300"
+    },
+    "frameworks": {
+      "netstandard2.1": {
+        "targetAlias": "netstandard2.1",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.306/RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
