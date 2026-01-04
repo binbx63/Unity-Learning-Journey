@@ -21,6 +21,7 @@ public class PlayerMove : MonoBehaviour
             {
                 if (hit.collider.gameObject.tag == "Gound")
                 {
+                    navMeshAgent.stoppingDistance = 0;
                     navMeshAgent.SetDestination(hit.point);
                 }
                 else if (hit.collider.gameObject.tag == "Interactable")
