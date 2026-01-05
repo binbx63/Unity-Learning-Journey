@@ -15,6 +15,12 @@ public class DialogueUI : MonoBehaviour
 
     public void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this.gameObject); 
+            return;
+        }
+        
         Instance = this;
     }
 
