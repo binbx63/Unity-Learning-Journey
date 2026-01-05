@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5502938127656726265}
   - component: {fileID: -2334117720037001740}
   m_Layer: 0
-  m_Name: JavelinBullet
+  m_Name: WeaponJavelinBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
