@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.UI;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -8,12 +10,13 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+    
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && EventSystem.current.IsPointerOverGameObject() == false)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             bool isCollide = Physics.Raycast(ray, out RaycastHit hit);
@@ -29,6 +32,6 @@ public class PlayerMove : MonoBehaviour
                     hit.collider.GetComponent<InteractableObject>().OnClick(navMeshAgent); //A parent class. Do interactable object fund.
                 }
             }
-        }
+        }        
     }
 }
