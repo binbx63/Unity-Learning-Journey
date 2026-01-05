@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04b7484d2a16b4a17ba15549194450b8, type: 3}
   m_Name: Weapon_Javalin
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
+  id: 3
   name: "\u5C16\u8089\u68D2"
   itemType: 0
   description: "\u5F88\u5C16\uFF0C\u5F88\u957F"
   propertyList:
   - propertyType: 4
     value: 20
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 34243d4bf37934bf5b6261808148dc33, type: 3}
   prefab: {fileID: 1925591694995368708, guid: 541ce0a31ab6449caa4ca797ee6a6561, type: 3}
