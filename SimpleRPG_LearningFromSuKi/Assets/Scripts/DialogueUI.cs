@@ -5,11 +5,18 @@ using UnityEngine.UI;
 
 public class DialogueUI : MonoBehaviour
 {
+
+    public static DialogueUI Instance{ get; private set; }
     private TextMeshProUGUI nameText;
     private TextMeshProUGUI contentText;
     private Button continueButton;
-    public  List<string> contentList;
+    private List<string> contentList;
     private int contentTextIndex = 0;
+
+    public void Awake()
+    {
+        Instance = this;
+    }
 
     public void Start()
     {
