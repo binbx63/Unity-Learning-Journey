@@ -17,6 +17,7 @@ public class DialogueUI : MonoBehaviour
         contentText = transform.Find("ContentTextBg/ContentText").GetComponent<TextMeshProUGUI>();
         continueButton = transform.Find("ContinueButtonBg").GetComponent<Button>();
         continueButton.onClick.AddListener(this.OnContinueButtonClick);
+        Hide();
 
     }
     public void Show()
@@ -28,7 +29,9 @@ public class DialogueUI : MonoBehaviour
         nameText.text = name;
         contentList = new List<string>();
         contentList.AddRange(content);
+        contentTextIndex = 0;
         contentText.text = contentList[0];
+        gameObject.SetActive(true);
     }
     public void Hide()
     {
