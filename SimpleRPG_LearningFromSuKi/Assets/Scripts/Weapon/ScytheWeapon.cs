@@ -12,10 +12,7 @@ public class ScytheWeapon : Weapon
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Attack();
-        }
+        
     }
     public override void Attack()
     {
