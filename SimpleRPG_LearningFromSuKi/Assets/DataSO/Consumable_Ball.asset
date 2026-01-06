@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04b7484d2a16b4a17ba15549194450b8, type: 3}
-  m_Name: Consumable_Mushroom
+  m_Name: Consumable_Ball
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
-  id: 1
-  name: "\u6625\u83C7"
-  itemType: 1
-  description: "\u7528\u6625\u836F\u517B\u5927\u7684\u8611\u83C7"
+  id: 6
+  name: "\u7403"
+  itemType: 0
+  description: "\u4E00\u4E2A\u7403"
   propertyList:
-  - propertyType: 2
-    value: 30
-  icon: {fileID: 21300000, guid: 43bb25e7240944c6399409d725719c1a, type: 3}
-  prefab: {fileID: 941622780792495849, guid: 8da80c986035b482f811191fc7db937a, type: 3}
+  - propertyType: 0
+    value: 1
+  icon: {fileID: 21300000, guid: 105aa01b1530a1e48ba3df5d4a1cae8b, type: 3}
+  prefab: {fileID: 5706253251507854402, guid: ae17d81b1ae1a451e8d841bf3089dcb1, type: 3}

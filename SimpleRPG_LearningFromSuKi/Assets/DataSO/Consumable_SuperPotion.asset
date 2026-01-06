@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 2
   name: "\u6625\u836F"
   itemType: 1
-  description: 
+  description: "\u50CF\u6625\u5929\u4E00\u6837\u6FC0\u53D1\u52A8\u7269\u7E41\u884D\u7684\u836F"
   propertyList:
   - propertyType: 0
     value: 30
