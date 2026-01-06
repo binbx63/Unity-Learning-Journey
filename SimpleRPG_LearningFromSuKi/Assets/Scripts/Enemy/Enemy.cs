@@ -1,5 +1,6 @@
 using System.Collections;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -51,10 +52,8 @@ public class Enemy : MonoBehaviour
                 }
             }
         }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(30);
-        }
+        //DontDestroyOnLoad(enemyAgent);
+        
     }
 
     /*IEnumerator NoramalState()
@@ -72,31 +71,52 @@ public class Enemy : MonoBehaviour
         Vector3 randomDir = new Vector3(UnityEngine.Random.Range(-1, 1f), 0, UnityEngine.Random.Range(-1, 1f));
         return transform.position + randomDir.normalized * UnityEngine.Random.Range(2, 5);
     }
-    
+
     public void TakeDamage(int damage)
     {
         HP -= damage;
-        
-        if(HP <= 0)
+
+        if (HP <= 0)
         {
             GetComponent<Collider>().enabled = false;
             int count = 4; //UnityEngine.Random.Range(0, 4);
             for (int i = 0; i < count; i++)
             {
-                ItemSO item = ItemDBManager.Instance.GetRandomItem();
+                SpawnPickableItem();
 
-                GameObject go = GameObject.Instantiate(item.prefab, transform.position, quaternion.identity);
-                go.tag = Tag.INTERACTABLE;
-                Animator anim = go.GetComponent<Animator>();
-                if (anim != false)
-                {
-                    anim.enabled = false;
-                }
-                PickableObject po = go.AddComponent<PickableObject>();
-                po.itemSO = item;
-
-            }     
-            Destroy(this.gameObject);  
+            }
+            Destroy(this.gameObject);
         }
     }
+    private void SpawnPickableItem()
+    {
+        ItemSO item = ItemDBManager.Instance.GetRandomItem();
+        GameObject go = GameObject.Instantiate(item.prefab, transform.position, quaternion.identity);
+
+        go.tag = Tag.INTERACTABLE;
+        Animator anim = go.GetComponent<Animator>();
+        if (anim != false)
+        {
+            anim.enabled = false;
+        }
+
+        PickableObject po = go.AddComponent<PickableObject>();
+        po.itemSO = item;
+
+        Collider collider = go.GetComponent<Collider>();
+        if (collider != null)
+        {
+            collider.enabled = true;
+            collider.isTrigger = false;
+        }
+        Rigidbody rgd = go.GetComponent<Rigidbody>();
+        if (rgd != null)
+        {
+            rgd.isKinematic = false;
+            rgd.useGravity = true;
+        }
+
+    }
 }
+
+

@@ -13,6 +13,8 @@ public class DialogueUI : MonoBehaviour
     private List<string> contentList;
     private int contentTextIndex = 0;
 
+    private GameObject uiGameObject;
+
     public void Awake()
     {
         if (Instance != null && Instance != this)
@@ -26,10 +28,11 @@ public class DialogueUI : MonoBehaviour
 
     public void Start()
     {
-        nameText = transform.Find("NameTextBg/NameText").GetComponent<TextMeshProUGUI>();
-        contentText = transform.Find("ContentTextBg/ContentText").GetComponent<TextMeshProUGUI>();
-        continueButton = transform.Find("ContinueButtonBg").GetComponent<Button>();
+        nameText = transform.Find("UI/NameTextBg/NameText").GetComponent<TextMeshProUGUI>();
+        contentText = transform.Find("UI/ContentTextBg/ContentText").GetComponent<TextMeshProUGUI>();
+        continueButton = transform.Find("UI/ContinueButtonBg").GetComponent<Button>();
         continueButton.onClick.AddListener(this.OnContinueButtonClick);
+        uiGameObject = transform.Find("UI").gameObject;
         Hide();
 
     }
@@ -44,11 +47,11 @@ public class DialogueUI : MonoBehaviour
         contentList.AddRange(content);
         contentTextIndex = 0;
         contentText.text = contentList[0];
-        gameObject.SetActive(true);
+        uiGameObject.SetActive(true);
     }
     public void Hide()
     {
-        gameObject.SetActive(false);
+        uiGameObject.SetActive(false);
     }
 
     private void OnContinueButtonClick()

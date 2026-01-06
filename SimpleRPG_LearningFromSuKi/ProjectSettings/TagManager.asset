@@ -7,6 +7,7 @@ TagManager:
   - Gound
   - Interactable
   - Weapon
+  - Enemy
   layers:
   - Default
   - TransparentFX

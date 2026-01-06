@@ -23,8 +23,7 @@ public class ScytheWeapon : Weapon
     {
         if(other.tag == Tag.ENEMY)
         {
-            //TODO
-            print("Trigger with" + other.name);
+            other.GetComponent<Enemy>().TakeDamage(20);
         }
     }
 }
