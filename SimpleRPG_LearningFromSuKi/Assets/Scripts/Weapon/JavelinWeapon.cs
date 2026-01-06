@@ -18,10 +18,11 @@ public class JavelinWeapon : Weapon
             bulletGo.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed, ForceMode.VelocityChange);
             bulletGo = null;
             Invoke("SpawnBullet", 0.5f);
+            
         }
         else
         {
-            return;
+
         }
     }
 
@@ -29,5 +30,9 @@ public class JavelinWeapon : Weapon
     {
         bulletGo = Instantiate(bulletPrefab, transform.position, transform.rotation);
         bulletGo.transform.parent = transform;
+        if(tag == Tag.INTERACTABLE)
+        {
+            Destroy(bulletGo.GetComponent<JavelinBullet>());
+        }
     }
 }

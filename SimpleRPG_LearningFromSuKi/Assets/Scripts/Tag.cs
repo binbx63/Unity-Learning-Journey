@@ -4,4 +4,5 @@ public class Tag
 {
     public const string ENEMY = "Enemy";
     public const string PLAYER = "player";
+    public const string INTERACTABLE = "Interactable";
 }

@@ -4,5 +4,8 @@ public class Weapon : MonoBehaviour
 {
     public int attaclValue;
 
-    public virtual void Attack(){}
+    public virtual void Attack()
+    {
+
+    }
 }

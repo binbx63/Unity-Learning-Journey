@@ -80,14 +80,23 @@ public class Enemy : MonoBehaviour
         if(HP <= 0)
         {
             GetComponent<Collider>().enabled = false;
-            int count = UnityEngine.Random.Range(0, 4);
-            for(int i = 0; i < count; i++)
+            int count = 4; //UnityEngine.Random.Range(0, 4);
+            for (int i = 0; i < count; i++)
             {
                 ItemSO item = ItemDBManager.Instance.GetRandomItem();
 
-                GameObject.Instantiate(item.prefab, transform.position, quaternion.identity);
-            }
-            Destroy(this.gameObject);
+                GameObject go = GameObject.Instantiate(item.prefab, transform.position, quaternion.identity);
+                go.tag = Tag.INTERACTABLE;
+                Animator anim = go.GetComponent<Animator>();
+                if (anim != false)
+                {
+                    anim.enabled = false;
+                }
+                PickableObject po = go.AddComponent<PickableObject>();
+                po.itemSO = item;
+
+            }     
+            Destroy(this.gameObject);  
         }
     }
 }
